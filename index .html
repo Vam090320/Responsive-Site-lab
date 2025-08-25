@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name ="viewport"content="widht=device-width,intial-scale=1.0"/>
+<title>Responsive Accessible Site</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <nav aria-label="Main Navigation">
+            <button class="menu-toggle" aria-label="Open navigation menu" aria-controls ="nav-links" aria-expanded ="false">
+               Menu
+            </button>
+            <ul id ="nav-links" class="nav-links" hidden>
+                <li>
+                    <a href="#home"tabindex="0">Home</a>
+                </li>
+                <li>
+                    <a href="#about"tabindex="0">About</a>
+                </li>
+                <li><a href ="#services"tabindex="0">Services</a></li>
+                <li><a href ="#contact" tabindex="0">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home"><h1>Welcome to My Website</h1></section>
+        <section id ="about"><h2>About Us</h2></section>
+        <section id ="services"><h2>Services</h2></section>
+        <section id ="contact"><h2>Contact</h2></section>
+    </main>
+    <footer>
+        <p>&copy;2025 Responsive Sit</p>
+    </footer>
+    <script>
+        const toggle =document.querySelector('.menu-toggle');
+        const navLinks =document.getelementById('nav-links');
+        toggle.addEventListener('click',()=>{
+            const expanded =toggle.getAttribute('aria-expanded')==='true';
+            toggle.setAttribute('aria-expanded',!expanded);
+            navLinks.hidden =expanded;
+        })
+    </script>
+</body>
+</html>
